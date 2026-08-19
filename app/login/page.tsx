@@ -1,0 +1,4 @@
+'use client';
+import { useState } from 'react'; import { createBrowserClient } from '@supabase/ssr';
+export default function Login(){const [email,setEmail]=useState('');const [password,setPassword]=useState('');const [message,setMessage]=useState('');async function signIn(e:React.FormEvent){e.preventDefault(); const s=createBrowserClient(process.env.NEXT_PUBLIC_SUPABASE_URL!,process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!);const {error}=await s.auth.signInWithPassword({email,password});if(error)setMessage(error.message);else location.href='/dashboard'}return <main className="login"><form onSubmit={signIn}><h1>Shipment Production ERP</h1><p>Sign in to continue.</p><label>Email<input type="email" required value={email} onChange={e=>setEmail(e.target.value)}/></label><label>Password<input type="password" required value={password} onChange={e=>setPassword(e.target.value)}/></label>{message&&<p className="error">{message}</p>}<button>Sign in</button></form></main>}
+

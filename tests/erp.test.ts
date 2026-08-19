@@ -1,0 +1,3 @@
+import {describe,it,expect} from 'vitest'; import {containerUnits,interchange,weightedAverage,purchaseSuggestion} from '../lib/erp';
+describe('ERP calculations',()=>{it('calculates composition and box interchange',()=>{expect(containerUnits({small_box_per_container:5,parts_qty_per_small_box:10,big_box_per_container:2,parts_qty_per_big_box:30})).toBe(110);expect(interchange(7,10,30)).toEqual({output:2,remainder:10})});it('uses last seven purchases for weighted average',()=>{expect(weightedAverage(Array.from({length:8},(_,i)=>({qty:1,rate:i+1})))).toBe(5)});it('covers lead time and buffer',()=>expect(purchaseSuggestion(10,2,5,3)).toBe(6))});
+

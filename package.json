@@ -1,0 +1,9 @@
+{
+  "name": "shipment-production-erp-chatgpt",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": { "dev": "next dev", "build": "next build", "start": "next start", "test": "vitest run" },
+  "dependencies": { "@supabase/ssr": "^0.7.0", "@supabase/supabase-js": "^2.57.4", "next": "^15.5.2", "react": "^19.1.1", "react-dom": "^19.1.1" },
+  "devDependencies": { "@types/node": "^22.15.0", "@types/react": "^19.1.0", "typescript": "^5.8.3", "vitest": "^3.2.4" }
+}
+
